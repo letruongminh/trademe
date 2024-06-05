@@ -30,7 +30,9 @@ export class SearchPage extends HomePage {
     }
 
     public async clickSearchButton() {
+        const startTime = Date.now();
         await this.searchButton.click();
+        return startTime; 
     }
 
     public async verifySearchTitle(thisWorld: ICustomWorld, keyword: string) {
@@ -46,6 +48,7 @@ export class SearchPage extends HomePage {
     public async verifyNumRes(thisWorld: ICustomWorld, numOfResult: string) {
         const promise: Promise<string | null> = this.resultCount.textContent();
         const actualNumOfRes: string | null = await promise;
+        let endTime = Date.now();
         if (actualNumOfRes !== null) {
             const match = actualNumOfRes.match(/\b\d+\b/);
             if (match !== null) {
@@ -58,5 +61,7 @@ export class SearchPage extends HomePage {
         } else {
             throw new Error("Text content is null.");
         }
+        thisWorld.log(`Time to process: (${endTime - thisWorld.parameters.startTime})`);
+        expect(endTime - thisWorld.parameters.startTime).toBeLessThanOrEqual(3000);
     }
 }

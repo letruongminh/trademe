@@ -8,8 +8,8 @@ When(/^I input the Search field with keyword "(.*)"$/, async function (this: ICu
     await new SearchPage(this.page!).fillKeyword(keyword);
 });
 
-When('I click on Search button', async function () {
-    await new SearchPage(this.page!).clickSearchButton();
+When('I click on Search button', async function (this: ICustomWorld) {
+    this.parameters.startTime = await new SearchPage(this.page!).clickSearchButton();
 });
 
 When('I clear the input', async function () {
