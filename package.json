@@ -1,0 +1,28 @@
+{
+  "name": "isp.qaautomation.testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "9.6.0",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@alex_neo/playwright-azure-reporter": "^1.8.0",
+    "@irrelon/path": "^6.2.4",
+    "@kafkajs/confluent-schema-registry": "^3.3.0",
+    "axios": "^1.7.2",
+    "d365-ui-test": "^0.1.28",
+    "kafkajs": "^2.2.4",
+    "xml2js": "^0.6.2"
+  }
+}

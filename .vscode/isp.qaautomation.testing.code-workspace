@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../"
+		}
+	],
+	"settings": {
+		"cucumber.glue": [
+			"tests/**/*.ts"
+		],
+		"playwright.reuseBrowser": false,
+		"playwright.showTrace": true,
+		"playwright.env": {
+
+		},
+		"files.associations": {
+			"**/pipelines/*.yml": "azure-pipelines"
+		},
+	}
+}
