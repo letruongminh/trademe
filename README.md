@@ -38,8 +38,3 @@ In order to run just *salesforce* tests
 
 In order to run just *api e.g. documentservice* tests
 `npm test tests/features/**/isp.*.feature`
-
-# CI - Azure Pipelines
-You can override headless with the environment variable: RUNHEADLESS  (pipeline build parameter pRunHeadless)
-$env:RUNHEADLESS='false'
-otherwise headless will be set to true if the CI environment variable is set. 
