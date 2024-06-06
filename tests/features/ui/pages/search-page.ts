@@ -24,6 +24,10 @@ export class SearchPage extends HomePage {
         this.resultCount = page.locator('h3[class="tm-search-header-result-count__heading ng-star-inserted"]');
     }
 
+    public async open(): Promise<void> {
+        await this.page.goto(this.autconfig.BASE_URL);
+    }
+
     public async fillKeyword(keyword: string) {
         await this.searchTextbox.click();
         await this.searchTextbox.fill(keyword);
@@ -32,7 +36,7 @@ export class SearchPage extends HomePage {
     public async clickSearchButton() {
         const startTime = Date.now();
         await this.searchButton.click();
-        return startTime; 
+        return startTime;
     }
 
     public async verifySearchTitle(thisWorld: ICustomWorld, keyword: string) {

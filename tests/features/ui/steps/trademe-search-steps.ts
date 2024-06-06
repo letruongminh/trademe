@@ -1,4 +1,4 @@
-import { Then, When } from "@cucumber/cucumber";
+import { Given, Then, When } from "@cucumber/cucumber";
 import { SearchPage } from "../pages/search-page";
 import { ICustomWorld, screenShotTake } from "../../../../automation/custom-world";
 import { HomePage } from "../pages/home-page";
@@ -26,4 +26,8 @@ Then(/^I should receive "(.*)" results accordingly$/, async function (this: ICus
 Then(/^I should not be redirected out of the "(.*)" screen$/, async function (this: ICustomWorld, screenName: string) {
     await new HomePage(this.page!).verifyCurrentPage(this, screenName);
     await screenShotTake(this);
+});
+
+Given('I am on the landing page', async function (this: ICustomWorld) {
+    await new SearchPage(this.page!).open();
 });
