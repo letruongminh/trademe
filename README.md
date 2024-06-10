@@ -1,5 +1,5 @@
 # Introduction 
-Add a QAAutomation repo for TSB Senior Quality Engineer:
+Add a QAAutomation repo:
 
 # Getting Started
 IDE: VS Code
